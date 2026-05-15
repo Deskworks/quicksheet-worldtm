@@ -1,0 +1,15 @@
+{
+  "name": "World Time",
+  "prefix": "worldtm",
+  "version": "1.0.0",
+  "description": "Multi-timezone world clock — your team's timezones at a glance",
+  "author": "cemheren",
+  "entrypoint": "dotnet run --project .",
+  "params": ["timezones (comma-separated): IANA IDs, abbreviations, or city names"],
+  "examples": [
+    "worldtm: London, Tokyo, NY",
+    "worldtm: PST, CET, IST, JST",
+    "worldtm: America/New_York, Europe/Berlin, Asia/Shanghai"
+  ],
+  "repository": "https://github.com/cemheren/quicksheet-worldtm"
+}
