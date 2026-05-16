@@ -19,14 +19,25 @@ In any QuickSheet cell, type:
 ext: github:cemheren/quicksheet-worldtm
 ```
 
+QuickSheet clones the repo, reads the manifest, and registers the `worldtm` prefix.
+
 ## Usage
 
 ```
-worldtm: London, Tokyo, NY
-worldtm: PST, CET, IST, JST
-worldtm: America/New_York, Europe/Berlin, Asia/Shanghai
-worldtm:                              # defaults: UTC, NY, London, Berlin, Tokyo, Sydney
+worldtm: London, Tokyo, NY,5,8
+worldtm: PST, CET, IST, JST,5,6
+worldtm: America/New_York, Europe/Berlin, Asia/Shanghai,5,5
 ```
+
+> **Important:** The last two comma-separated numbers are always the output grid dimensions (columns, rows). Without them, QuickSheet may not allocate enough space for the output. Always append `,<cols>,<rows>` after your timezone list.
+
+### Minimal examples
+
+| Cell content | Description |
+|---|---|
+| `worldtm: London, Tokyo, NY,5,8` | 3 timezones, 5 columns × 8 rows |
+| `worldtm: PST, CET, IST, JST,5,6` | 4 timezones, 5 columns × 6 rows |
+| `worldtm: ,5,8` | Default timezones (UTC, NY, London, Berlin, Tokyo, Sydney) |
 
 ### Example output
 
@@ -66,7 +77,7 @@ Set your wallpaper to always show when teammates are available:
 ```csv
 Team Clock,,
 "ext: github:cemheren/quicksheet-worldtm",,
-"worldtm: NY, London, Berlin, Mumbai, Tokyo, Sydney",,
+"worldtm: NY, London, Berlin, Mumbai, Tokyo, Sydney,5,8",,
 ```
 
 ## Requirements
